@@ -1,17 +1,17 @@
 run:
 	make compile
-	./Driver
+	./Driver input.txt output.txt
 
 compile: huffencode.o HuffmanNode.o HuffmanTree.o
-	g++ -o *.o Driver
+	g++ *.o -o Driver
 
 huffencode.o: huffencode.cpp
 	g++ -c huffencode.cpp
 
-HuffmanNode.o: HuffmanNode.h HuffmanNode.cpp
+HuffmanNode.o: HuffmanNode.cpp HuffmanNode.h 
 	g++ -c HuffmanNode.cpp
 
-HuffmanTree.o: HuffmanTree.h HuffmanTree.cpp
+HuffmanTree.o: HuffmanTree.cpp HuffmanTree.h 
 	g++ -c HuffmanTree.cpp
 
 clean:
