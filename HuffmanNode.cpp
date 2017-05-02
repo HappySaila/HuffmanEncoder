@@ -21,9 +21,9 @@ bool HuffmanNode::operator< (const HuffmanNode & node) const{
 }
 
 void HuffmanNode::PrintData() const{
-	if (value.equals("\n")){
+	if (value=='\n'){
 		cout << "New Line-" << freq << endl;
-	} else if (value.equals(" ")){
+	} else if (value == ' '){
 		cout <<"Space-" << freq << endl;
 	} else {
 		cout << value << "-" << freq << endl;
