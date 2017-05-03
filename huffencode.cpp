@@ -12,7 +12,8 @@ int main(int argc, char const *argv[])
 {
 	HuffmanTree m(argv[1], argv[2]);
 	m.CreateTree();
-
-
-	//create priority queue
+	m.GetCodeTable();
+	m.EncodeInput();
+	m.WriteOutput();
+	m.DecodeOutput();
 }

@@ -3,3 +3,5 @@ My name is Grant
 I was born in france
 My uncle is from johburg
 This is the end of the random text
+
+Grant ate an ant!
