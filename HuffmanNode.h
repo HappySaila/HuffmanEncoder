@@ -2,6 +2,7 @@
 #define HUFFMANNODE_H
 
 #include <iostream>
+#include <memory>
 
 
 namespace WLSGRA012{
@@ -13,10 +14,13 @@ namespace WLSGRA012{
 			HuffmanNode(char value, int freq);
 			HuffmanNode(HuffmanNode left, HuffmanNode right);
 			//copy constructor
-			// HuffmanNode(const HuffmanNode & node);
+			// HuffmanNode(HuffmanNode &node);
 			//copy assignment constructor
+			// HuffmanNode operator= (HuffmanNode &node);
 			//move constructor
+			// HuffmanNode (HuffmanNode &&node);
 			//move assignment constructor
+			// HuffmanNode operator= (HuffmanNode &&node);
 			//destructor
 			~HuffmanNode();
 

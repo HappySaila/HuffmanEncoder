@@ -4,6 +4,7 @@
 #include <iostream>
 #include <unordered_map>
 #include <fstream>
+#include <memory>
 #include <queue>
 
 #include "HuffmanNode.h"
@@ -22,6 +23,16 @@ namespace WLSGRA012{
 		public:
 			HuffmanTree(std::string inputFile, std::string outputFile);
 			~HuffmanTree();
+			//copy constructor
+			// HuffmanNode(const HuffmanNode & node);
+			//copy assignment constructor
+			// HuffmanNode operator=(HuffmanTree &tree);
+			//move constructor
+			// HuffmanNode(HuffmanNode &&node);
+			//move assignment constructor
+			// HuffmanNode operator=(HuffmanNode &&node);
+			//destructor
+			// ~HuffmanNode();
 			void CreateTree();
 			void GenerateTree();
 			void CreatePriorityQueue();

@@ -2,7 +2,6 @@
 #include <unordered_map>
 #include "HuffmanNode.h"
 #include "HuffmanTree.h"
-#include "Encoder.h"
 
 using namespace WLSGRA012;
 using namespace std;
