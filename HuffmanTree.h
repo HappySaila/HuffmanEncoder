@@ -4,6 +4,7 @@
 #include <iostream>
 #include <unordered_map>
 #include <fstream>
+#include <sstream>
 #include <memory>
 #include <queue>
 
@@ -16,6 +17,8 @@ namespace WLSGRA012{
 			std::string inputFile;	
 			std::string outputFile;
 			std::string outputString;
+
+			std::stringstream codeTable;
 
 			std::unordered_map<char, int> map;
 			std::unordered_map<char, int>::iterator it;

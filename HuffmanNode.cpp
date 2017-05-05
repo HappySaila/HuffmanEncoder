@@ -6,7 +6,10 @@
 using namespace WLSGRA012;
 using namespace std;
 
-//constructors
+
+//##################################################################################
+//constructors 
+//##################################################################################
 //default constructors
 HuffmanNode::HuffmanNode(char value, int freq){
 	this->value = value;
@@ -22,13 +25,20 @@ HuffmanNode::HuffmanNode(HuffmanNode left, HuffmanNode right){
 	this->right = make_shared<HuffmanNode>(right);
 }
 
+//copy constructor
+//copy assignment
+//move constructor
+//move assignment
 
 //destructor
 HuffmanNode::~HuffmanNode(){
 	// cout << "node deleted" << endl;
 }
 
-//methods
+
+//##################################################################################
+//methods 
+//##################################################################################
 bool HuffmanNode::operator< (const HuffmanNode & node) const{
 	return freq > node.freq;
 }

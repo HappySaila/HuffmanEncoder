@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <unordered_map>
+#include <sstream>
 
 #include "HuffmanTree.h"
 #include "HuffmanNode.h"
@@ -23,8 +24,14 @@ HuffmanTree::HuffmanTree(string inputFile, string outputFile){
 }
 
 
+//copy constructor
+//copy assignment
+//move constructor
+//move assignment
+
+
 HuffmanTree::~HuffmanTree(){
-	cout << "tree destroyed" << endl;
+	// cout << "tree destroyed" << endl;
 }
 
 //##################################################################################
@@ -95,14 +102,17 @@ void HuffmanTree::PrintEncoderMap(){
 	for (encoderIt = encoder.begin(); encoderIt != encoder.end(); encoderIt++)
 	{
 		if (encoderIt->first == ' '){
-			cout << "[Space" << "--" << encoderIt->second << "]" << endl;
+			codeTable << "[Space" << "--" << encoderIt->second << "]" << endl;
 		} else if (encoderIt->first == '\n'){
-			cout << "[New Line" << "--" << encoderIt->second << "]" << endl;
+			codeTable << "[New Line" << "--" << encoderIt->second << "]" << endl;
 		} else {
-			cout << "[" << encoderIt->first << "--" << encoderIt->second << "]" << endl;
+			codeTable << "[" << encoderIt->first << "--" << encoderIt->second << "]" << endl;
 		}
 
 	}
+
+	cout << codeTable.str() << endl;
+
 }
 
 void HuffmanTree::EncodeInput(){
@@ -120,6 +130,25 @@ void HuffmanTree::EncodeInput(){
 
 void HuffmanTree::WriteOutput(){
 	cout << "Writing output to file" << outputFile << "..." << endl;
+	fstream fileOut(outputFile, fstream::out | fstream::trunc);
+
+	stringstream s;
+	if (fileOut.is_open()){
+		string codeTableString = codeTable.str();
+
+		//write the code table to the file
+		fileOut << "--Code Table--" << endl << endl;
+		fileOut << codeTableString << endl << endl;
+
+		//write the binary code to a file
+		fileOut << "--Encoded message--" << endl << endl;
+		fileOut << outputString << endl;
+
+	} else {
+		cout << "Error writing to the file." << endl;	
+	}
+		
+	fileOut.close();
 }
 
 void HuffmanTree::DecodeOutput(){
