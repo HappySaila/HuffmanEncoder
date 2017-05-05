@@ -14,15 +14,15 @@ namespace WLSGRA012{
 			HuffmanNode(char value, int freq);
 			HuffmanNode(HuffmanNode left, HuffmanNode right);
 			//copy constructor
-			// HuffmanNode(HuffmanNode &node);
+			HuffmanNode(const HuffmanNode &node) = default;
 			//copy assignment constructor
-			// HuffmanNode operator= (HuffmanNode &node);
+			HuffmanNode &operator= (HuffmanNode &node) = default;
 			//move constructor
-			// HuffmanNode (HuffmanNode &&node);
+			HuffmanNode (HuffmanNode &&node);
 			//move assignment constructor
-			// HuffmanNode operator= (HuffmanNode &&node);
+			HuffmanNode &operator= (HuffmanNode &&node) = default;
 			//destructor
-			~HuffmanNode();
+			~HuffmanNode() = default;
 
 
 			//variables

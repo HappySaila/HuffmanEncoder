@@ -27,11 +27,10 @@ HuffmanTree::HuffmanTree(string inputFile, string outputFile){
 //copy constructor
 //copy assignment
 //move constructor
-//move assignment
-
-
-HuffmanTree::~HuffmanTree(){
-	// cout << "tree destroyed" << endl;
+//move constructor
+HuffmanTree::HuffmanTree(HuffmanTree &&tree) : inputFile(tree.inputFile), outputFile(tree.outputFile), outputString(tree.outputString),
+	map(tree.map), queue(tree.queue), it(tree.it), encoder(tree.encoder), encoderIt(tree.encoderIt){
+	root = std::move(tree.root);
 }
 
 //##################################################################################

@@ -28,11 +28,9 @@ HuffmanNode::HuffmanNode(HuffmanNode left, HuffmanNode right){
 //copy constructor
 //copy assignment
 //move constructor
-//move assignment
-
-//destructor
-HuffmanNode::~HuffmanNode(){
-	// cout << "node deleted" << endl;
+HuffmanNode::HuffmanNode(HuffmanNode &&node) : freq(node.freq), value(node.value), code(node.code){
+	left = std::move(node.left);
+	right = std::move(node.right);
 }
 
 

@@ -25,17 +25,17 @@ namespace WLSGRA012{
 			std::priority_queue<HuffmanNode> queue;
 		public:
 			HuffmanTree(std::string inputFile, std::string outputFile);
-			~HuffmanTree();
 			//copy constructor
-			// HuffmanNode(const HuffmanNode & node);
+			HuffmanTree(const HuffmanTree &tree) = default;
 			//copy assignment constructor
-			// HuffmanNode operator=(HuffmanTree &tree);
+			HuffmanTree &operator=(HuffmanTree &tree) = default;
 			//move constructor
-			// HuffmanNode(HuffmanNode &&node);
+			HuffmanTree(HuffmanTree &&tree);
 			//move assignment constructor
-			// HuffmanNode operator=(HuffmanNode &&node);
+			HuffmanTree &operator=(HuffmanTree &&tree) = default;
 			//destructor
-			// ~HuffmanNode();
+			~HuffmanTree() = default;
+
 			void CreateTree();
 			void GenerateTree();
 			void CreatePriorityQueue();
