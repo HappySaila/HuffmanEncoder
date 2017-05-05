@@ -3,6 +3,7 @@
 #include <unordered_map>
 #include <sstream>
 
+
 #include "HuffmanTree.h"
 #include "HuffmanNode.h"
 
@@ -56,6 +57,7 @@ void HuffmanTree::CreatePriorityQueue(){
 		shared_ptr<HuffmanNode> node(new HuffmanNode(it->first, it->second));
 		queue.push(*node.get());
 	}
+
 
 	
 }
